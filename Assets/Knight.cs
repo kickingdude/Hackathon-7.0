@@ -15,4 +15,24 @@ public class Knight : MonoBehaviour
     {
         
     }
+    void NeutralAttack()
+    {
+
+    }
+    void DownAttack()
+    {
+
+    }
+    void SideAttack()
+    {
+
+    }
+    void DownBlock()
+    {
+
+    }
+    void Block()
+    {
+
+    }
 }

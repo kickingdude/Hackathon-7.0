@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     public int character;
     public bool getTurn;
     public float jump;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public bool facing;
     public float speedcap;
 
@@ -20,11 +20,12 @@ public class Movement : MonoBehaviour
     public string right;
     public string Attack;
     public string Block;
+
     // Start is called before the first frame update
-
-
     void Start()
     {
+        Character();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         player_tag = gameObject.tag;
         if (player_tag == "P1")
         {
@@ -49,6 +50,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (getTurn)
         {
             if (Input.GetKey(left))
@@ -77,5 +79,20 @@ public class Movement : MonoBehaviour
     public string Player()
     {
         return player_tag;
+    }
+    void Character()
+    {
+        if (character == 1)
+        {
+            gameObject.AddComponent<Rushdown>();
+        }
+        else if (character == 2)
+        {
+            gameObject.AddComponent<Rizzard>();
+        }
+        else
+        {
+            gameObject.AddComponent<Knight>();
+        }
     }
 }

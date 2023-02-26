@@ -15,4 +15,20 @@ public class Rizzard : MonoBehaviour
     {
         
     }
+    void NeutralAttack()
+    {
+
+    }
+    void DownAttack()
+    {
+
+    }
+    void SideAttack()
+    {
+
+    }
+    void Block()
+    {
+
+    }
 }

@@ -6,6 +6,8 @@ public class Rushdown : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Movement movement;
+    private HitBox_Controller collide;
+    public GameObject hitbox;
     //RushDown Vars
     public float dash = 40;
     public bool dashlock;
@@ -29,7 +31,7 @@ public class Rushdown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        collide = hitbox.GetComponent<HitBox_Controller>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,8 @@ public class Rushdown : MonoBehaviour
             right = movement.right;
             Attack = movement.Attack;
             Block = movement.Block;
-        }        
+        }
+        facing = movement.facing;
         if (Input.GetKeyDown(Block) && (Input.GetKey(right) || Input.GetKey(left)))
         {
             Dash();
@@ -67,7 +70,19 @@ public class Rushdown : MonoBehaviour
             }
             StartCoroutine(dashCheck());
     }
-    void UpAttack()
+    void NeutralAttack()
+    {
+
+        if (collide.hitcollide == true)
+        {
+
+        }
+    }
+    void DownAttack()
+    {
+
+    }
+    void SideAttack()
     {
 
     }
